@@ -1,12 +1,56 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class Bomb : MonoBehaviour
+public class WaterBombController : MonoBehaviour
 {
-    public float explosionDelay = 2f;
+    public GameObject waterbombPrefab;  // ÆøÅº ÇÁ¸®ÆÕ
+    public KeyCode inputKey = KeyCode.Space;  // ÆøÅº ¼³Ä¡ Å°
+    public float explosionDelay = 3f; // Æø¹ß Áö¿¬ ½Ã°£
+    public int waterBombAmout = 1;  // ÆøÅº ¼³Ä¡ °¡´É °³¼ö
+    private int waterbombsRemaining;  // ³²Àº ÆøÅº °³¼ö
+    
     public GameObject explosionEffect;
     public LayerMask explosionMask;
     public Tilemap tilemap;  // Å¸ÀÏ¸Ê ÂüÁ¶
+
+    private void OnEnable()
+    {
+        waterbombsRemaining = waterBombAmout;
+    }
+
+    private void Update()
+    {
+        if (waterbombsRemaining > 0 && Input.GetKeyDown(inputKey))
+        {
+            StartCoroutine(PlaceWaterBomb());
+        }
+    }
+    
+    private IEnumerator PlaceWaterBomb()
+    {
+        Vector2 position = transform.position;
+        
+        position.x = Mathf.Round(position.x);
+        position.y = Mathf.Round(position.y);
+
+        GameObject waterBomb = Instantiate(waterbombPrefab, position, Quaternion.identity);
+        waterbombsRemaining--;
+        
+        yield return new WaitForSeconds(explosionDelay);
+        
+        Destroy(waterBomb);
+        waterbombsRemaining++;
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("WaterBomb"))
+        {
+            other.isTrigger = false;
+        }
+    }
 
     void Start()
     {
