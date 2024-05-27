@@ -3499,11 +3499,8 @@ MonoBehaviour:
     m_Bits: 64
   explosionDuration: 1
   explosionRadius: 2
-  explosionEffect: {fileID: 0}
-  explosionMask:
-    serializedVersion: 2
-    m_Bits: 0
-  tilemap: {fileID: 0}
+  destructibleTiles: {fileID: 512560444}
+  destructiblePrefab: {fileID: 2142853425816332947, guid: 974c6c9f0ba4f384b826baeb61106065, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
