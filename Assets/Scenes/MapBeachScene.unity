@@ -3489,10 +3489,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ea95f04dd8d0cf41b0a534f7c752d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterbombPrefab: {fileID: 6125604012405065778, guid: a91803c0d9bdde54a9de2e76f12ede27, type: 3}
+  waterBombPrefab: {fileID: 6125604012405065778, guid: a91803c0d9bdde54a9de2e76f12ede27, type: 3}
   inputKey: 32
   explosionDelay: 3
   waterBombAmout: 1
+  explosionPrefeb: {fileID: -3843015242624193651, guid: 17aa2e9a97217d346a8ffa7257f051ed, type: 3}
+  explosionDuration: 1
+  explosionRadius: 2
   explosionEffect: {fileID: 0}
   explosionMask:
     serializedVersion: 2

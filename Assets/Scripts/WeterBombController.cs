@@ -1,15 +1,21 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class WaterBombController : MonoBehaviour
 {
-    public GameObject waterbombPrefab;  // 폭탄 프리팹
+    [Header("WaterBomb")]
+    public GameObject waterBombPrefab;  // 폭탄 프리팹
     public KeyCode inputKey = KeyCode.Space;  // 폭탄 설치 키
     public float explosionDelay = 3f; // 폭발 지연 시간
     public int waterBombAmout = 1;  // 폭탄 설치 가능 개수
-    private int waterbombsRemaining;  // 남은 폭탄 개수
+    private int waterBombsRemaining;  // 남은 폭탄 개수
+    
+    [Header("Explosion")]
+    public ExplosionController explosionPrefeb;
+    public LayerMask explosionLayer;
+    public float explosionDuration = 1f;
+    public int explosionRadius = 1;
     
     public GameObject explosionEffect;
     public LayerMask explosionMask;
@@ -17,17 +23,27 @@ public class WaterBombController : MonoBehaviour
 
     private void OnEnable()
     {
-        waterbombsRemaining = waterBombAmout;
+        waterBombsRemaining = waterBombAmout;
     }
 
     private void Update()
     {
-        if (waterbombsRemaining > 0 && Input.GetKeyDown(inputKey))
+        if (waterBombsRemaining > 0 && Input.GetKeyDown(inputKey))
         {
             StartCoroutine(PlaceWaterBomb());
         }
     }
     
+    /**
+     * 폭탄을 설치하는 코루틴 함수
+     * 폭탄을 설치하고 폭발 효과를 생성한다.
+     * 폭발 효과는 폭발 지연 시간 후에 생성된다.
+     * 폭발 효과는 폭발 반경만큼 폭발한다.
+     * 폭발 효과는 네 방향으로 폭발한다.
+     * 폭탄 설치 후 남은 폭탄 개수를 감소시킨다.
+     * 폭탄 설치 후 폭발 효과가 생성되면 폭탄을 제거한다.
+     * 폭탄 설치 후 폭발 효과가 생성되면 폭발 효과를 제거한다.
+     */
     private IEnumerator PlaceWaterBomb()
     {
         Vector2 position = transform.position;
@@ -35,65 +51,69 @@ public class WaterBombController : MonoBehaviour
         position.x = Mathf.Round(position.x);
         position.y = Mathf.Round(position.y);
 
-        GameObject waterBomb = Instantiate(waterbombPrefab, position, Quaternion.identity);
-        waterbombsRemaining--;
+        GameObject waterBomb = Instantiate(waterBombPrefab, position, Quaternion.identity);
+        waterBombsRemaining--;
         
         yield return new WaitForSeconds(explosionDelay);
         
+        position = waterBomb.transform.position;
+        position.x=  Mathf.Round(position.x);
+        position.y = Mathf.Round(position.y);
+        
+        ExplosionController explosion = Instantiate(explosionPrefeb, position, Quaternion.identity);
+        explosion.SetActiveRenderer(explosion.start);
+        explosion.DestroyAfter(explosionDuration);
+        Destroy(explosion.gameObject, explosionDuration);
+        
+        Explode(position, Vector2.up, explosionRadius);
+        Explode(position, Vector2.down, explosionRadius);
+        Explode(position, Vector2.left, explosionRadius);
+        Explode(position, Vector2.right, explosionRadius);
+        
         Destroy(waterBomb);
-        waterbombsRemaining++;
+        waterBombsRemaining++;
     }
 
+    /**
+     * 폭발 효과를 생성하는 함수
+     * @param position 폭발 위치
+     * @param direction 폭발 방향
+     * @param length 폭발 길이
+     */
+    private void Explode(Vector2 position, Vector2 direction, int length)
+    {
+        if (length <= 0)
+        {
+            return;
+        }
+
+        position += direction;
+        
+        // 폭발 효과와 벽이 충돌한 경우
+        if (Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, explosionLayer))
+        {
+            return;
+        }
+        
+        ExplosionController explosion = Instantiate(explosionPrefeb, position, Quaternion.identity);
+        explosion.SetActiveRenderer(length > 1 ? explosion.middle : explosion.end);
+        explosion.SetDirection(direction);
+        explosion.DestroyAfter(explosionDuration);
+        Destroy(explosion.gameObject, explosionDuration);
+        
+        Explode(position, direction, length - 1);
+    }
+
+    /**
+     * 폭발 효과와 충돌한 경우 호출되는 함수
+     * 폭발 효과와 충돌한 타일을 제거한다.
+     * 폭발 효과와 충돌한 오브젝트를 제거한다.
+     */
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("WaterBomb"))
         {
             other.isTrigger = false;
-        }
-    }
-
-    void Start()
-    {
-        Invoke("Explode", explosionDelay);
-    }
-
-    void Explode()
-    {
-        Vector3 bombPosition = transform.position;
-
-        // 타일맵 그리드의 셀 좌표로 변환
-        Vector3Int cellPosition = tilemap.WorldToCell(bombPosition);
-
-        // 상하좌우 4칸에 폭발 이펙트 생성
-        CreateExplosion(cellPosition + new Vector3Int(1, 0, 0), Quaternion.Euler(0, 0, 0));
-        CreateExplosion(cellPosition + new Vector3Int(-1, 0, 0), Quaternion.Euler(0, 0, 180));
-        CreateExplosion(cellPosition + new Vector3Int(0, 1, 0), Quaternion.Euler(0, 0, 90));
-        CreateExplosion(cellPosition + new Vector3Int(0, -1, 0), Quaternion.Euler(0, 0, -90));
-
-        // 폭탄 오브젝트 삭제
-        Destroy(gameObject);
-    }
-
-    void CreateExplosion(Vector3Int cellPosition, Quaternion rotation)
-    {
-        // 타일맵의 셀 좌표로 월드 좌표 변환
-        Vector3 explosionPosition = tilemap.GetCellCenterWorld(cellPosition);
-
-        // 폭발 이펙트가 겹치는지 체크
-        if (Physics2D.OverlapCircle(explosionPosition, 0.1f, explosionMask) == null)
-        {
-            GameObject explosion = Instantiate(explosionEffect, explosionPosition, rotation);
-
-            // 타일 크기를 기준으로 폭발 이펙트 크기 조정
-            Vector3 tileSize = tilemap.cellSize;
-
-            // 폭발 이펙트 프리팹의 원본 크기를 가져와 타일 크기에 맞게 스케일 조정
-            SpriteRenderer spriteRenderer = explosion.GetComponent<SpriteRenderer>();
-            if (spriteRenderer != null)
-            {
-                Vector3 spriteSize = spriteRenderer.bounds.size;
-                explosion.transform.localScale = new Vector3(tileSize.x / spriteSize.x, tileSize.y / spriteSize.y, 1);
-            }
         }
     }
 }
