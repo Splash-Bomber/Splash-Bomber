@@ -239,7 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 206917666}
   - component: {fileID: 206917665}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StoneStage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,7 +499,7 @@ GameObject:
   - component: {fileID: 512560444}
   - component: {fileID: 512560443}
   - component: {fileID: 512560445}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Destructibles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1396,7 +1396,7 @@ GameObject:
   - component: {fileID: 1564308559}
   - component: {fileID: 1564308558}
   - component: {fileID: 1564308560}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Indestructibles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3494,6 +3494,9 @@ MonoBehaviour:
   explosionDelay: 3
   waterBombAmout: 1
   explosionPrefeb: {fileID: -3843015242624193651, guid: 17aa2e9a97217d346a8ffa7257f051ed, type: 3}
+  explosionLayer:
+    serializedVersion: 2
+    m_Bits: 64
   explosionDuration: 1
   explosionRadius: 2
   explosionEffect: {fileID: 0}

@@ -17,10 +17,10 @@ public class WaterBombController : MonoBehaviour
     public float explosionDuration = 1f;
     public int explosionRadius = 1;
     
-    public GameObject explosionEffect;
-    public LayerMask explosionMask;
-    public Tilemap tilemap;  // 타일맵 참조
-
+    [Header("Destructible")]
+    public Tilemap destructibleTiles;
+    public Destructible destructiblePrefab;
+    
     private void OnEnable()
     {
         waterBombsRemaining = waterBombAmout;
@@ -92,6 +92,8 @@ public class WaterBombController : MonoBehaviour
         // 폭발 효과와 벽이 충돌한 경우
         if (Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, explosionLayer))
         {
+            // 폭발 효과와 충돌한 타일을 제거한다.
+            ClearDestructible(position);
             return;
         }
         
@@ -103,7 +105,7 @@ public class WaterBombController : MonoBehaviour
         
         Explode(position, direction, length - 1);
     }
-
+    
     /**
      * 폭발 효과와 충돌한 경우 호출되는 함수
      * 폭발 효과와 충돌한 타일을 제거한다.
@@ -114,6 +116,22 @@ public class WaterBombController : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("WaterBomb"))
         {
             other.isTrigger = false;
+        }
+    }
+    
+    /**
+     * 폭발 효과와 충돌한 타일을 제거하는 함수
+     * @param position 폭발 위치
+     */
+    private void ClearDestructible(Vector2 position)
+    {
+        Vector3Int cell = destructibleTiles.WorldToCell(position);
+        TileBase tile = destructibleTiles.GetTile(cell);
+
+        if (tile != null)
+        {
+            Instantiate(destructiblePrefab, position, Quaternion.identity);
+            destructibleTiles.SetTile(cell, null);
         }
     }
 }
