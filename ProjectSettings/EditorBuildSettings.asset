@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MapNormalScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/TitleScene3-1.unity
+    guid: 872d437c7282d4f43a530fb13c4af778
+  - enabled: 1
+    path: Assets/Scenes/TitleScene3-2.unity
+    guid: 317b73cbe41c7924881de37a48ddf09d
+  - enabled: 1
+    path: Assets/Scenes/Map1PlaySelectScene.unity
+    guid: 4f7f6c8e5b4f15243bc5ff6528a19c36
+  - enabled: 1
+    path: Assets/Scenes/MapBeachScene.unity
+    guid: 6a251652930e4dd45858ec19a5ea81bb
   m_configObjects: {}
