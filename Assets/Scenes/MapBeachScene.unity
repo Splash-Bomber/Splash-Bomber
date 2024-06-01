@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 86993740}
   - component: {fileID: 86993739}
   m_Layer: 0
-  m_Name: Up
+  m_Name: Enemy_Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2de36068140a7d4b9acff5b4cc61d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleSprite: {fileID: -7679691229697230091, guid: 22cd15ec83fed3b4db95f16835a5416d, type: 3}
+  idleSprite: {fileID: -3719433009349668311, guid: 04de33a67ba00214b84817677eab986e, type: 3}
   animationSprites:
   - {fileID: -3719433009349668311, guid: 04de33a67ba00214b84817677eab986e, type: 3}
   - {fileID: -3387031413343639996, guid: 04de33a67ba00214b84817677eab986e, type: 3}
@@ -563,7 +563,7 @@ GameObject:
   - component: {fileID: 357298765}
   - component: {fileID: 357298764}
   m_Layer: 0
-  m_Name: Right
+  m_Name: Enemy_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3935,7 +3935,7 @@ GameObject:
   - component: {fileID: 1597072293}
   - component: {fileID: 1597072292}
   m_Layer: 0
-  m_Name: Left
+  m_Name: Enemy_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4043,6 +4043,7 @@ GameObject:
   - component: {fileID: 1627532427}
   - component: {fileID: 1627532426}
   - component: {fileID: 1627532425}
+  - component: {fileID: 1627532431}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -4057,7 +4058,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627532424}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 086d57347ed26c9418147f7516c5f20b, type: 3}
   m_Name: 
@@ -4077,7 +4078,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627532424}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 5
@@ -4105,7 +4106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterBombPrefab: {fileID: 6125604012405065778, guid: a91803c0d9bdde54a9de2e76f12ede27, type: 3}
-  inputKey: 32
+  inputKey: 13
   explosionDelay: 3
   waterBombAmout: 1
   explosionPrefeb: {fileID: -3843015242624193651, guid: 17aa2e9a97217d346a8ffa7257f051ed, type: 3}
@@ -4197,6 +4198,27 @@ Transform:
   - {fileID: 357298763}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1627532431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627532424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79d7f26ce3c6fcd428a3ab50f217a4c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  inputUp: 273
+  inputDown: 274
+  inputLeft: 276
+  inputRight: 275
+  spriteRendererUp: {fileID: 86993739}
+  spriteRendererDown: {fileID: 1975086876}
+  spriteRendererLeft: {fileID: 1597072292}
+  spriteRendererRight: {fileID: 357298764}
 --- !u!1 &1705605951
 GameObject:
   m_ObjectHideFlags: 0
@@ -4447,7 +4469,7 @@ GameObject:
   - component: {fileID: 1975086877}
   - component: {fileID: 1975086876}
   m_Layer: 0
-  m_Name: Down
+  m_Name: Enemy_Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
