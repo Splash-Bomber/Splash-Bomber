@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4424c6f4f51b94c24b4e16851d03121a
+guid: 7fcab62d3e6134cb4b56eb02dde6df63
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,43 +136,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: waterBomb_0
+      name: back_walk_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 14
-        height: 19
+        x: 0
+        y: 0
+        width: 16
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f297c34b233f042719548c1167473ba2
-      internalID: 1720445034
+      spriteID: c925cc9ea3300447caf151bf3105fdcf
+      internalID: 789761241
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: waterBomb_1
+      name: back_walk_1
       rect:
         serializedVersion: 2
         x: 16
-        y: 1
+        y: 0
         width: 16
-        height: 19
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b79df79d6c218425f9910a554ac85f9c
-      internalID: 2271830
+      spriteID: 150a7eaab2b7b486792ac3f929bd5c10
+      internalID: 834122631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: back_walk_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17a936c89632243759d5648687b69fa3
+      internalID: -115713435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: back_walk_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4d5d7ebd6e6f487fa8dcec8671374cd
+      internalID: 685717223
       vertices: []
       indices: 
       edges: []
@@ -188,8 +230,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      waterBomb_0: 1720445034
-      waterBomb_1: 2271830
+      back_walk_0: 789761241
+      back_walk_1: 834122631
+      back_walk_2: -115713435
+      back_walk_3: 685717223
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

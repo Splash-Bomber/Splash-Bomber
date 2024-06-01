@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4424c6f4f51b94c24b4e16851d03121a
+guid: 75f4af53fa3b7405ea320c8489fc8309
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,43 +136,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: waterBomb_0
+      name: side_walk_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 14
-        height: 19
+        x: 0
+        y: 0
+        width: 16
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f297c34b233f042719548c1167473ba2
-      internalID: 1720445034
+      spriteID: 6890cd7b1dc374ba3a864b7c745bfade
+      internalID: 1814922679
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: waterBomb_1
+      name: side_walk_1
       rect:
         serializedVersion: 2
         x: 16
-        y: 1
+        y: 0
         width: 16
-        height: 19
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b79df79d6c218425f9910a554ac85f9c
-      internalID: 2271830
+      spriteID: 1b0f53da28a8344c1bd4965a2e890917
+      internalID: -2095543752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: side_walk_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16520fe6cca884b7a8b573607f333841
+      internalID: 1498382988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: side_walk_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96820eb2ec309499088b62df23a80a38
+      internalID: 1545333601
       vertices: []
       indices: 
       edges: []
@@ -188,8 +230,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      waterBomb_0: 1720445034
-      waterBomb_1: 2271830
+      side_walk_0: 1814922679
+      side_walk_1: -2095543752
+      side_walk_2: 1498382988
+      side_walk_3: 1545333601
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

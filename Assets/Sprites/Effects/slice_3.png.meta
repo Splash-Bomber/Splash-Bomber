@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4424c6f4f51b94c24b4e16851d03121a
+guid: d135b448aed0c4b37967d5360f8f7566
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: waterBomb_0
+      name: slice_3_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 14
-        height: 19
+        x: 16
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f297c34b233f042719548c1167473ba2
-      internalID: 1720445034
+      spriteID: ce6748fbdb9b94d16a3ce60ce6423c82
+      internalID: 657500801
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: waterBomb_1
+      name: slice_3_1
       rect:
         serializedVersion: 2
         x: 16
-        y: 1
+        y: 32
         width: 16
-        height: 19
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,8 +171,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b79df79d6c218425f9910a554ac85f9c
-      internalID: 2271830
+      spriteID: bd21a6788addd4a61b257ca2cfa9e26d
+      internalID: 1896817742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slice_3_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf3feeb4175dd403a838e8be2976329b
+      internalID: -1049546274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slice_3_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0f2e56909dde405bae46dba6aa9644d
+      internalID: 216737447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slice_3_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 761a0070785ea4d71b5110fc586454f0
+      internalID: 1626252956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slice_3_5
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9403aa18e7224283a7afe0b4e1120fa
+      internalID: 772887468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slice_3_6
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd4e71a73a364a9e9af566c94502092
+      internalID: -1182390951
       vertices: []
       indices: 
       edges: []
@@ -188,8 +293,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      waterBomb_0: 1720445034
-      waterBomb_1: 2271830
+      slice_3_0: 657500801
+      slice_3_1: 1896817742
+      slice_3_2: -1049546274
+      slice_3_3: 216737447
+      slice_3_4: 1626252956
+      slice_3_5: 772887468
+      slice_3_6: -1182390951
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

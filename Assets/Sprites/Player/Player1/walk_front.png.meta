@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4424c6f4f51b94c24b4e16851d03121a
+guid: 23784bbcb93f943bcbdc2cfff52909ca
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,43 +136,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: waterBomb_0
+      name: walk_front_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 14
-        height: 19
+        x: 0
+        y: 0
+        width: 16
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f297c34b233f042719548c1167473ba2
-      internalID: 1720445034
+      spriteID: ea3004cbd26534025ae97456245125c6
+      internalID: -550809968
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: waterBomb_1
+      name: walk_front_1
       rect:
         serializedVersion: 2
         x: 16
-        y: 1
+        y: 0
         width: 16
-        height: 19
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b79df79d6c218425f9910a554ac85f9c
-      internalID: 2271830
+      spriteID: b78a1734ebb334127939d4c9ebc1126e
+      internalID: -684113428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_front_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61542ed5df1ea47fea93aa8aff1df15f
+      internalID: 647724266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_front_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 640c93e170dfc42c2adc13fdb598201b
+      internalID: 1261621296
       vertices: []
       indices: 
       edges: []
@@ -188,8 +230,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      waterBomb_0: 1720445034
-      waterBomb_1: 2271830
+      walk_front_0: -550809968
+      walk_front_1: -684113428
+      walk_front_2: 647724266
+      walk_front_3: 1261621296
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
