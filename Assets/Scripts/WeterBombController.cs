@@ -5,23 +5,23 @@ using UnityEngine.Tilemaps;
 public class WaterBombController : MonoBehaviour
 {
     [Header("WaterBomb")]
-    public GameObject waterBombPrefab;  // ÆøÅº ÇÁ¸®ÆÕ
-    public KeyCode inputKey = KeyCode.Space;  // ÆøÅº ¼³Ä¡ Å°
-    public float explosionDelay = 3f; // Æø¹ß Áö¿¬ ½Ã°£
-    public int waterBombAmout = 1;  // ÆøÅº ¼³Ä¡ °¡´É °³¼ö
-    private int waterBombsRemaining;  // ³²Àº ÆøÅº °³¼ö
+    public GameObject waterBombPrefab; // ë¬¼í­íƒ„ prefab
+    public KeyCode inputKey = KeyCode.Space; // ë¬¼í­íƒ„ ë†“ëŠ” í‚¤
+    public float explosionDelay = 3f; // í­ë°œê¹Œì§€ì˜ ì‹œê°„
+    public int waterBombAmout = 1; // ë¬¼í­íƒ„ ê°¯ìˆ˜
+    private int waterBombsRemaining; // ë‚¨ì€ ë¬¼í­íƒ„ ê°¯ìˆ˜
     
     [Header("Explosion")]
-    public ExplosionController explosionPrefeb;
-    public LayerMask explosionLayer;
-    public float explosionDuration = 1f;
-    public int explosionRadius = 1;
+    public ExplosionController explosionPrefeb; // í­ë°œ prefab
+    public LayerMask explosionLayer; // í­ë°œ ë ˆì´ì–´
+    public float explosionDuration = 1f; // í­ë°œ ì§€ì† ì‹œê°„
+    public int explosionRadius = 1; // í­ë°œ ë²”ìœ„
     
     [Header("Destructible")]
-    public Tilemap destructibleTiles;
-    public Destructible destructiblePrefab;
+    public Tilemap destructibleTiles; // íŒŒê´´ ê°€ëŠ¥í•œ íƒ€ì¼
+    public Destructible destructiblePrefab; // íŒŒê´´ ê°€ëŠ¥í•œ prefab
     
-    private void OnEnable()
+    private void OnEnable() 
     {
         waterBombsRemaining = waterBombAmout;
     }
@@ -34,15 +34,13 @@ public class WaterBombController : MonoBehaviour
         }
     }
     
-    /**
-     * ÆøÅºÀ» ¼³Ä¡ÇÏ´Â ÄÚ·çÆ¾ ÇÔ¼ö
-     * ÆøÅºÀ» ¼³Ä¡ÇÏ°í Æø¹ß È¿°ú¸¦ »ı¼ºÇÑ´Ù.
-     * Æø¹ß È¿°ú´Â Æø¹ß Áö¿¬ ½Ã°£ ÈÄ¿¡ »ı¼ºµÈ´Ù.
-     * Æø¹ß È¿°ú´Â Æø¹ß ¹İ°æ¸¸Å­ Æø¹ßÇÑ´Ù.
-     * Æø¹ß È¿°ú´Â ³× ¹æÇâÀ¸·Î Æø¹ßÇÑ´Ù.
-     * ÆøÅº ¼³Ä¡ ÈÄ ³²Àº ÆøÅº °³¼ö¸¦ °¨¼Ò½ÃÅ²´Ù.
-     * ÆøÅº ¼³Ä¡ ÈÄ Æø¹ß È¿°ú°¡ »ı¼ºµÇ¸é ÆøÅºÀ» Á¦°ÅÇÑ´Ù.
-     * ÆøÅº ¼³Ä¡ ÈÄ Æø¹ß È¿°ú°¡ »ı¼ºµÇ¸é Æø¹ß È¿°ú¸¦ Á¦°ÅÇÑ´Ù.
+    /*
+     * ë¬¼í­íƒ„ì„ ë†“ëŠ” í•¨ìˆ˜
+     * ë¬¼í­íƒ„ì„ ë†“ê³  ì¼ì • ì‹œê°„ í›„ í­ë°œí•˜ë©°, í­ë°œ ë²”ìœ„ ë‚´ì˜ íƒ€ì¼ì„ íŒŒê´´í•œë‹¤.
+     * í­ë°œì€ 4ë°©í–¥ìœ¼ë¡œ ì§„í–‰ë˜ë©°, í­ë°œ ë²”ìœ„ê°€ 0ì´ ë  ë•Œê¹Œì§€ ë°˜ë³µí•œë‹¤.
+     * í­ë°œì€ í­ë°œ prefabì„ ìƒì„±í•˜ì—¬ êµ¬í˜„í•œë‹¤.
+     * í­ë°œ prefabì€ í­ë°œ ì‹œì‘, ì¤‘ê°„, ëì„ êµ¬ë¶„í•˜ì—¬ ì• ë‹ˆë©”ì´ì…˜ì„ ì¬ìƒí•œë‹¤.
+     * í­ë°œ prefabì€ í­ë°œì´ ëë‚œ í›„ ì¼ì • ì‹œê°„ í›„ íŒŒê´´ëœë‹¤.
      */
     private IEnumerator PlaceWaterBomb()
     {
@@ -73,12 +71,14 @@ public class WaterBombController : MonoBehaviour
         Destroy(waterBomb);
         waterBombsRemaining++;
     }
-
-    /**
-     * Æø¹ß È¿°ú¸¦ »ı¼ºÇÏ´Â ÇÔ¼ö
-     * @param position Æø¹ß À§Ä¡
-     * @param direction Æø¹ß ¹æÇâ
-     * @param length Æø¹ß ±æÀÌ
+    
+    /*
+     * í­ë°œì„ êµ¬í˜„í•˜ëŠ” í•¨ìˆ˜
+     * í­ë°œì€ í­ë°œ prefabì„ ìƒì„±í•˜ì—¬ êµ¬í˜„í•œë‹¤.
+     * í­ë°œ prefabì€ í­ë°œ ì‹œì‘, ì¤‘ê°„, ëì„ êµ¬ë¶„í•˜ì—¬ ì• ë‹ˆë©”ì´ì…˜ì„ ì¬ìƒí•œë‹¤.
+     * í­ë°œ prefabì€ í­ë°œì´ ëë‚œ í›„ ì¼ì • ì‹œê°„ í›„ íŒŒê´´ëœë‹¤.
+     * í­ë°œì€ í­ë°œ ë²”ìœ„ê°€ 0ì´ ë  ë•Œê¹Œì§€ ë°˜ë³µí•œë‹¤.
+     * í­ë°œì€ í­ë°œ ë ˆì´ì–´ì— ìˆëŠ” íƒ€ì¼ì„ íŒŒê´´í•œë‹¤.
      */
     private void Explode(Vector2 position, Vector2 direction, int length)
     {
@@ -89,10 +89,9 @@ public class WaterBombController : MonoBehaviour
 
         position += direction;
         
-        // Æø¹ß È¿°ú¿Í º®ÀÌ Ãæµ¹ÇÑ °æ¿ì
+        // í­ë°œ ë²”ìœ„ ë‚´ì— íŒŒê´´ ê°€ëŠ¥í•œ íƒ€ì¼ì´ ìˆëŠ” ê²½ìš°
         if (Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, explosionLayer))
         {
-            // Æø¹ß È¿°ú¿Í Ãæµ¹ÇÑ Å¸ÀÏÀ» Á¦°ÅÇÑ´Ù.
             ClearDestructible(position);
             return;
         }
@@ -106,11 +105,6 @@ public class WaterBombController : MonoBehaviour
         Explode(position, direction, length - 1);
     }
     
-    /**
-     * Æø¹ß È¿°ú¿Í Ãæµ¹ÇÑ °æ¿ì È£ÃâµÇ´Â ÇÔ¼ö
-     * Æø¹ß È¿°ú¿Í Ãæµ¹ÇÑ Å¸ÀÏÀ» Á¦°ÅÇÑ´Ù.
-     * Æø¹ß È¿°ú¿Í Ãæµ¹ÇÑ ¿ÀºêÁ§Æ®¸¦ Á¦°ÅÇÑ´Ù.
-     */
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("WaterBomb"))
@@ -119,9 +113,15 @@ public class WaterBombController : MonoBehaviour
         }
     }
     
-    /**
-     * Æø¹ß È¿°ú¿Í Ãæµ¹ÇÑ Å¸ÀÏÀ» Á¦°ÅÇÏ´Â ÇÔ¼ö
-     * @param position Æø¹ß À§Ä¡
+    /*
+     * íŒŒê´´ ê°€ëŠ¥í•œ íƒ€ì¼ì„ íŒŒê´´í•˜ëŠ” í•¨ìˆ˜
+     * íŒŒê´´ ê°€ëŠ¥í•œ íƒ€ì¼ì„ íŒŒê´´í•˜ê³  íŒŒê´´ ê°€ëŠ¥í•œ prefabì„ ìƒì„±í•œë‹¤.
+     * íŒŒê´´ ê°€ëŠ¥í•œ íƒ€ì¼ì€ destructibleTilesì— ì €ì¥ë˜ì–´ ìˆë‹¤.
+     * íŒŒê´´ ê°€ëŠ¥í•œ prefabì€ destructiblePrefabì„ ì‚¬ìš©í•œë‹¤.
+     * íŒŒê´´ ê°€ëŠ¥í•œ íƒ€ì¼ì€ destructibleTilesì—ì„œ ì œê±°í•œë‹¤.
+     * íŒŒê´´ ê°€ëŠ¥í•œ prefabì€ position ìœ„ì¹˜ì— ìƒì„±í•œë‹¤.
+     * íŒŒê´´ ê°€ëŠ¥í•œ prefabì€ íŒŒê´´ ê°€ëŠ¥í•œ íƒ€ì¼ì˜ í¬ê¸°ì™€ ê°™ë‹¤.
+     * íŒŒê´´ ê°€ëŠ¥í•œ prefabì€ íŒŒê´´ ê°€ëŠ¥í•œ íƒ€ì¼ì˜ ìœ„ì¹˜ì— ìƒì„±ëœë‹¤.
      */
     private void ClearDestructible(Vector2 position)
     {
@@ -133,5 +133,11 @@ public class WaterBombController : MonoBehaviour
             Instantiate(destructiblePrefab, position, Quaternion.identity);
             destructibleTiles.SetTile(cell, null);
         }
+    }
+
+    public void AddWaterBomb()
+    {
+        waterBombAmout++;
+        waterBombsRemaining++;
     }
 }

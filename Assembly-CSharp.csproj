@@ -50,6 +50,7 @@
     <Compile Include="Assets/Scripts/WeterBombController.cs" />
     <Compile Include="Assets/Scripts/MovementController.cs" />
     <Compile Include="Assets/Scripts/AnimatedSpriteRenderer.cs" />
+    <Compile Include="Assets/Scripts/ItemPickup.cs" />
     <Compile Include="Assets/Scripts/Destructible.cs" />
     <Compile Include="Assets/Scripts/SceneController.cs" />
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
