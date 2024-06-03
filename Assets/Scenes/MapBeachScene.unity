@@ -2691,9 +2691,9 @@ MonoBehaviour:
   tileRed: {fileID: 11400000, guid: 8022daac0ac53374e96f0e8ad6bbc235, type: 2}
   gameTime: 60
   resultText: {fileID: 281901701}
-  timerText: {fileID: 0}
-  blueTileCountText: {fileID: 0}
-  redTileCountText: {fileID: 0}
+  timerText: {fileID: 889866261}
+  blueTileCountText: {fileID: 1405547768}
+  redTileCountText: {fileID: 1744954457}
 --- !u!4 &1271574953
 Transform:
   m_ObjectHideFlags: 0
