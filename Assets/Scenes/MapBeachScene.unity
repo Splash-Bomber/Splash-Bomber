@@ -2152,7 +2152,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   explosionDuration: 1
-  explosionRadius: 2
+  explosionRadius: 1
   destructibleTiles: {fileID: 512560444}
   destructiblePrefab: {fileID: 2142853425816332947, guid: 974c6c9f0ba4f384b826baeb61106065, type: 3}
   groundTiles: {fileID: 512560444}
@@ -2691,9 +2691,9 @@ MonoBehaviour:
   tileRed: {fileID: 11400000, guid: 8022daac0ac53374e96f0e8ad6bbc235, type: 2}
   gameTime: 60
   resultText: {fileID: 281901701}
-  timerText: {fileID: 889866261}
-  blueTileCountText: {fileID: 1405547768}
-  redTileCountText: {fileID: 1744954457}
+  timerText: {fileID: 0}
+  blueTileCountText: {fileID: 0}
+  redTileCountText: {fileID: 0}
 --- !u!4 &1271574953
 Transform:
   m_ObjectHideFlags: 0
@@ -5201,7 +5201,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   explosionDuration: 1
-  explosionRadius: 2
+  explosionRadius: 1
   destructibleTiles: {fileID: 512560444}
   destructiblePrefab: {fileID: 2142853425816332947, guid: 974c6c9f0ba4f384b826baeb61106065, type: 3}
   groundTiles: {fileID: 512560444}
