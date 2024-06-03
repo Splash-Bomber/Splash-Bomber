@@ -9,6 +9,9 @@ public class TileCounter : MonoBehaviour
     public TileBase tileRed; // 타일 레드
     public float gameTime = 60f; // 게임 시간 (초)
     public Text resultText; // 결과 텍스트 UI
+    public Text timerText; // 타이머 텍스트 UI
+    public Text blueTileCountText; // 블루 타일 개수 텍스트 UI
+    public Text redTileCountText; // 레드 타일 개수 텍스트 UI
 
     private float timer;
     private bool gameEnded = false;
@@ -24,6 +27,9 @@ public class TileCounter : MonoBehaviour
         if (!gameEnded)
         {
             timer -= Time.deltaTime;
+
+            // 타이머 텍스트 업데이트
+            timerText.text = Mathf.Ceil(timer).ToString();
 
             if (timer <= 0)
             {
@@ -61,6 +67,10 @@ public class TileCounter : MonoBehaviour
                 redTileCount++;
             }
         }
+
+        // 타일 개수 텍스트 업데이트
+        blueTileCountText.text = blueTileCount.ToString();
+        redTileCountText.text = redTileCount.ToString();
 
         Debug.Log($"Current Blue Tile Count: {blueTileCount}");
         Debug.Log($"Current Red Tile Count: {redTileCount}");
