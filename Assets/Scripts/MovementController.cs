@@ -19,10 +19,11 @@ public class MovementController : MonoBehaviour
 
     public AnimatedSpriteRenderer spriteRendererDeath;
 
-    public AudioClip deathSound; // Á×À½ »ç¿îµå
+    public AudioClip deathSound; // ì‚¬ë§ ì†Œë¦¬
     private AudioSource audioSource;
 
     private AnimatedSpriteRenderer activeSpriteRenderer;
+    private Vector2 respawnPosition;
 
     private void Awake()
     {
@@ -99,17 +100,34 @@ public class MovementController : MonoBehaviour
         spriteRendererRight.enabled = false;
         spriteRendererDeath.enabled = true;
 
-        // Á×À½ »ç¿îµå Àç»ı
         PlaySound(deathSound);
 
-        // 1ÃÊ ÈÄ Á×À½ ½ÃÄö½º Á¾·á
+        respawnPosition = playerRigidBody.position;
         Invoke(nameof(OnDeathSequenceEnded), 1f);
     }
 
     private void OnDeathSequenceEnded()
     {
         gameObject.SetActive(false);
-        FindObjectOfType<GameManager>().CheckWinState();
+        Invoke(nameof(Respawn), 3f);
+    }
+
+    private void Respawn()
+    {
+        transform.position = respawnPosition;
+        gameObject.SetActive(true);
+
+        // ì´ˆê¸° ìƒíƒœ ë³µì›
+        spriteRendererUp.enabled = false;
+        spriteRendererDown.enabled = true;
+        spriteRendererLeft.enabled = false;
+        spriteRendererRight.enabled = false;
+        spriteRendererDeath.enabled = false;
+        activeSpriteRenderer = spriteRendererDown;
+
+        direction = Vector2.down; // ê¸°ë³¸ ë°©í–¥ ì„¤ì •
+        enabled = true;
+        GetComponent<WaterBombController>().enabled = true;
     }
 
     private void PlaySound(AudioClip clip)
