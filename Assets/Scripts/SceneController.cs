@@ -8,4 +8,12 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+    
+    public void AnyKey(string sceneName)
+    {
+        if (Input.anyKey)
+        {
+            SceneManager.LoadScene(sceneName);
+        }
+    }
 }
