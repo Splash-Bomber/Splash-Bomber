@@ -15,9 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/SelectScene.unity
     guid: 317b73cbe41c7924881de37a48ddf09d
   - enabled: 1
-    path: Assets/Scenes/Map1PlaySelectScene.unity
-    guid: 4f7f6c8e5b4f15243bc5ff6528a19c36
-  - enabled: 1
     path: Assets/Scenes/MapBeachScene.unity
     guid: 6a251652930e4dd45858ec19a5ea81bb
+  - enabled: 1
+    path: Assets/Scenes/MapForestScene.unity
+    guid: 5a821aa98e5fc934bba20371c12801f1
+  - enabled: 1
+    path: Assets/Scenes/MapCityScene.unity
+    guid: 4502b977c79d94bce91508d295b38f65
   m_configObjects: {}
