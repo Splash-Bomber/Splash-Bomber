@@ -23,12 +23,22 @@ public class WaterBombController : MonoBehaviour
     public Tilemap groundTiles; // 바닥 타일맵
     public TileBase newTile; // 새로운 타일
 
+    [Header("Audio")]
+    public AudioClip placeSound; // 설치 사운드
+    public AudioClip explosionSound; // 폭발 사운드
+    private AudioSource audioSource;
+
     public delegate void TileChanged(TileBase newTile, Vector3Int position);
     public static event TileChanged OnTileChanged;
 
     private void OnEnable()
     {
         waterBombsRemaining = waterBombAmout;
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
 
     private void Update()
@@ -49,6 +59,9 @@ public class WaterBombController : MonoBehaviour
         GameObject waterBomb = Instantiate(waterBombPrefab, position, Quaternion.identity);
         waterBombsRemaining--;
 
+        // 설치 사운드 재생
+        PlaySound(placeSound);
+
         yield return new WaitForSeconds(explosionDelay);
 
         position = waterBomb.transform.position;
@@ -61,6 +74,9 @@ public class WaterBombController : MonoBehaviour
         ExplosionController explosion = Instantiate(explosionPrefeb, position, Quaternion.identity);
         explosion.SetActiveRenderer(explosion.start);
         explosion.DestroyAfter(explosionDuration);
+
+        // 폭발 시 사운드 재생
+        PlaySound(explosionSound);
 
         Explode(position, Vector2.up, explosionRadius);
         Explode(position, Vector2.down, explosionRadius);
@@ -129,5 +145,13 @@ public class WaterBombController : MonoBehaviour
     {
         waterBombAmout++;
         waterBombsRemaining++;
+    }
+
+    private void PlaySound(AudioClip clip)
+    {
+        if (audioSource != null && clip != null)
+        {
+            audioSource.PlayOneShot(clip);
+        }
     }
 }

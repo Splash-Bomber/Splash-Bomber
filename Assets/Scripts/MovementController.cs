@@ -6,7 +6,7 @@ public class MovementController : MonoBehaviour
     public Rigidbody2D playerRigidBody { get; private set; }
     private Vector2 direction = Vector2.down;
     public float speed = 5f;
-    
+
     public KeyCode inputUp = KeyCode.W;
     public KeyCode inputDown = KeyCode.S;
     public KeyCode inputLeft = KeyCode.A;
@@ -19,12 +19,20 @@ public class MovementController : MonoBehaviour
 
     public AnimatedSpriteRenderer spriteRendererDeath;
 
+    public AudioClip deathSound; // Á×À½ »ç¿îµå
+    private AudioSource audioSource;
+
     private AnimatedSpriteRenderer activeSpriteRenderer;
 
     private void Awake()
     {
         playerRigidBody = GetComponent<Rigidbody2D>();
         activeSpriteRenderer = spriteRendererDown;
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
 
     private void Update()
@@ -32,15 +40,15 @@ public class MovementController : MonoBehaviour
         if (Input.GetKey(inputUp))
         {
             SetDirection(Vector2.up, spriteRendererUp);
-        } 
+        }
         else if (Input.GetKey(inputDown))
         {
             SetDirection(Vector2.down, spriteRendererDown);
-        } 
+        }
         else if (Input.GetKey(inputLeft))
         {
             SetDirection(Vector2.left, spriteRendererLeft);
-        } 
+        }
         else if (Input.GetKey(inputRight))
         {
             SetDirection(Vector2.right, spriteRendererRight);
@@ -55,14 +63,14 @@ public class MovementController : MonoBehaviour
     {
         Vector2 position = playerRigidBody.position;
         Vector2 translation = direction * speed * Time.fixedDeltaTime;
-        
+
         playerRigidBody.MovePosition(position + translation);
     }
 
     private void SetDirection(Vector2 newDirection, AnimatedSpriteRenderer spriteRenderer)
     {
         direction = newDirection;
-        
+
         spriteRendererUp.enabled = spriteRenderer == spriteRendererUp;
         spriteRendererDown.enabled = spriteRenderer == spriteRendererDown;
         spriteRendererLeft.enabled = spriteRenderer == spriteRendererLeft;
@@ -79,24 +87,36 @@ public class MovementController : MonoBehaviour
             DeathSequence();
         }
     }
-    
+
     private void DeathSequence()
     {
         enabled = false;
         GetComponent<WaterBombController>().enabled = false;
-        
+
         spriteRendererUp.enabled = false;
         spriteRendererDown.enabled = false;
         spriteRendererLeft.enabled = false;
         spriteRendererRight.enabled = false;
         spriteRendererDeath.enabled = true;
-        
-        Invoke(nameof(OnDeathSequenceEnded), 1.25f);
+
+        // Á×À½ »ç¿îµå Àç»ý
+        PlaySound(deathSound);
+
+        // 1ÃÊ ÈÄ Á×À½ ½ÃÄö½º Á¾·á
+        Invoke(nameof(OnDeathSequenceEnded), 1f);
     }
-    
+
     private void OnDeathSequenceEnded()
     {
         gameObject.SetActive(false);
         FindObjectOfType<GameManager>().CheckWinState();
+    }
+
+    private void PlaySound(AudioClip clip)
+    {
+        if (audioSource != null && clip != null)
+        {
+            audioSource.PlayOneShot(clip);
+        }
     }
 }

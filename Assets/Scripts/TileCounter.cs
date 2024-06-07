@@ -87,11 +87,11 @@ public class TileCounter : MonoBehaviour
 
         if (blueTileCount > redTileCount)
         {
-            resultText.text = "Blue Team Wins!";
+            resultText.text = "Blue Wins!";
         }
         else if (redTileCount > blueTileCount)
         {
-            resultText.text = "Red Team Wins!";
+            resultText.text = "Red Wins!";
         }
         else
         {
