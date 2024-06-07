@@ -2068,7 +2068,7 @@ MonoBehaviour:
   destructiblePrefab: {fileID: 2142853425816332947, guid: 974c6c9f0ba4f384b826baeb61106065, type: 3}
   groundTiles: {fileID: 512560444}
   newTile: {fileID: 11400000, guid: eaa9dd5f2c0f6a9419aee8ce8a36b99a, type: 2}
-  bombPlaceSound: {fileID: 8300000, guid: f96c907efbb7e504bb78c077035e6eeb, type: 3}
+  placeSound: {fileID: 8300000, guid: f96c907efbb7e504bb78c077035e6eeb, type: 3}
   explosionSound: {fileID: 8300000, guid: fcbeda824b1e85443bb9133103dc25c9, type: 3}
 --- !u!114 &567614557
 MonoBehaviour:
@@ -2092,6 +2092,7 @@ MonoBehaviour:
   spriteRendererLeft: {fileID: 875626446}
   spriteRendererRight: {fileID: 1436937382}
   spriteRendererDeath: {fileID: 421995701}
+  deathSound: {fileID: 8300000, guid: 7df1bc5097004af4faf0adf00bdedd82, type: 3}
 --- !u!58 &567614558
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5807,6 +5808,7 @@ MonoBehaviour:
   spriteRendererLeft: {fileID: 391397430}
   spriteRendererRight: {fileID: 179868530}
   spriteRendererDeath: {fileID: 91690635}
+  deathSound: {fileID: 8300000, guid: 7df1bc5097004af4faf0adf00bdedd82, type: 3}
 --- !u!114 &1804773335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5833,7 +5835,7 @@ MonoBehaviour:
   destructiblePrefab: {fileID: 2142853425816332947, guid: 974c6c9f0ba4f384b826baeb61106065, type: 3}
   groundTiles: {fileID: 512560444}
   newTile: {fileID: 11400000, guid: bfc851c974ec1cb4d8c194f4db90ac32, type: 2}
-  bombPlaceSound: {fileID: 8300000, guid: 820b4ba84621f4ebba5db56ca27f10cd, type: 3}
+  placeSound: {fileID: 8300000, guid: f96c907efbb7e504bb78c077035e6eeb, type: 3}
   explosionSound: {fileID: 8300000, guid: fcbeda824b1e85443bb9133103dc25c9, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

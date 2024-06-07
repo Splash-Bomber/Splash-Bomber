@@ -1877,6 +1877,8 @@ MonoBehaviour:
   destructiblePrefab: {fileID: 2142853425816332947, guid: 974c6c9f0ba4f384b826baeb61106065, type: 3}
   groundTiles: {fileID: 512560444}
   newTile: {fileID: 11400000, guid: 2a43b1a2c6b54a949b11a5153d0e210f, type: 2}
+  placeSound: {fileID: 8300000, guid: f96c907efbb7e504bb78c077035e6eeb, type: 3}
+  explosionSound: {fileID: 8300000, guid: fcbeda824b1e85443bb9133103dc25c9, type: 3}
 --- !u!114 &567614557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1899,6 +1901,7 @@ MonoBehaviour:
   spriteRendererLeft: {fileID: 875626446}
   spriteRendererRight: {fileID: 1436937382}
   spriteRendererDeath: {fileID: 421995701}
+  deathSound: {fileID: 8300000, guid: 7df1bc5097004af4faf0adf00bdedd82, type: 3}
 --- !u!58 &567614558
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2281,6 +2284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 900953501}
   - component: {fileID: 900953500}
+  - component: {fileID: 900953502}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2318,6 +2322,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &900953502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900953499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474aa5f14a9e4eb4bbeb6f15fae89555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundMusic: {fileID: 8300000, guid: e40916057a2937f4ca0b1f4e1c60e523, type: 3}
 --- !u!1 &1024330452
 GameObject:
   m_ObjectHideFlags: 0
@@ -4947,6 +4964,7 @@ MonoBehaviour:
   spriteRendererLeft: {fileID: 391397430}
   spriteRendererRight: {fileID: 179868530}
   spriteRendererDeath: {fileID: 91690635}
+  deathSound: {fileID: 8300000, guid: 7df1bc5097004af4faf0adf00bdedd82, type: 3}
 --- !u!114 &1804773335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4973,6 +4991,8 @@ MonoBehaviour:
   destructiblePrefab: {fileID: 2142853425816332947, guid: 974c6c9f0ba4f384b826baeb61106065, type: 3}
   groundTiles: {fileID: 512560444}
   newTile: {fileID: 11400000, guid: cbf24451dda60b74d94d79e663913a42, type: 2}
+  placeSound: {fileID: 8300000, guid: f96c907efbb7e504bb78c077035e6eeb, type: 3}
+  explosionSound: {fileID: 8300000, guid: fcbeda824b1e85443bb9133103dc25c9, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
