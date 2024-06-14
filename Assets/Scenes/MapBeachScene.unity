@@ -968,7 +968,7 @@ GameObject:
   - component: {fileID: 512560445}
   m_Layer: 6
   m_Name: Destructibles
-  m_TagString: Untagged
+  m_TagString: Destructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1866,7 +1866,7 @@ MonoBehaviour:
   waterBombPrefab: {fileID: 6125604012405065778, guid: a91803c0d9bdde54a9de2e76f12ede27, type: 3}
   inputKey: 303
   explosionDelay: 3
-  waterBombAmout: 1
+  waterBombAmout: 2
   explosionPrefeb: {fileID: -3843015242624193651, guid: 17aa2e9a97217d346a8ffa7257f051ed, type: 3}
   explosionLayer:
     serializedVersion: 2
@@ -2413,7 +2413,7 @@ MonoBehaviour:
   groundTiles: {fileID: 512560444}
   tileBlue: {fileID: 11400000, guid: cbf24451dda60b74d94d79e663913a42, type: 2}
   tileRed: {fileID: 11400000, guid: 2a43b1a2c6b54a949b11a5153d0e210f, type: 2}
-  gameTime: 60
+  gameTime: 150
   resultText: {fileID: 281901701}
   timerText: {fileID: 889866261}
   blueTileCountText: {fileID: 1405547768}
@@ -2751,7 +2751,7 @@ GameObject:
   - component: {fileID: 1564308560}
   m_Layer: 6
   m_Name: Indestructibles
-  m_TagString: Untagged
+  m_TagString: Indestructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

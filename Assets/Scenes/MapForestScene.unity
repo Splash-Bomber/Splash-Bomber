@@ -2057,7 +2057,7 @@ MonoBehaviour:
   waterBombPrefab: {fileID: 6125604012405065778, guid: a91803c0d9bdde54a9de2e76f12ede27, type: 3}
   inputKey: 303
   explosionDelay: 3
-  waterBombAmout: 1
+  waterBombAmout: 2
   explosionPrefeb: {fileID: -3843015242624193651, guid: 17aa2e9a97217d346a8ffa7257f051ed, type: 3}
   explosionLayer:
     serializedVersion: 2
@@ -3113,7 +3113,7 @@ MonoBehaviour:
   groundTiles: {fileID: 512560444}
   tileBlue: {fileID: 11400000, guid: bfc851c974ec1cb4d8c194f4db90ac32, type: 2}
   tileRed: {fileID: 11400000, guid: eaa9dd5f2c0f6a9419aee8ce8a36b99a, type: 2}
-  gameTime: 60
+  gameTime: 150
   resultText: {fileID: 281901701}
   timerText: {fileID: 889866261}
   blueTileCountText: {fileID: 1405547768}

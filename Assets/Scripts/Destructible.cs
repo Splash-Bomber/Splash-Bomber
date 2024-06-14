@@ -7,7 +7,6 @@ public class Destructible : MonoBehaviour
     [Range(0f, 1f)]
     public float itemSpawnChange = 0.3f;
     public GameObject[] spawnItems;
-    
 
     private void Start()
     {
